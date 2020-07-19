@@ -1,0 +1,46 @@
+﻿@model Web.Model.DynamicNavigationModel.DisplayBootstrapNavigtaionViewModel
+@{
+    int counter = 1;
+
+    var navigationData = Model.DisplayNavigation.GroupBy(x => x.Manufacturer).OrderBy(x=>x.Key).ToList();
+}
+<header id="link-header">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+        <div class="container">
+            <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><i class="fas fa-align-justify"></i></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav mx-auto" id="main-div" itemscope="" itemtype="https://schema.org/SiteNavigationElement">
+                    @foreach (var category in navigationData.ToList())
+                    {
+                        <li class="nav-item dropdown" role="presentation">
+                            <a class="nav-link dropdown-toggle" id="@category.Key" href="#" data-toggle="dropdown" aria-expand="false">@category.Key</a>
+                            <div class="sub-container-@counter sub-container-top">
+                                <ul class="dropdown-menu multi-column">
+                                    <li>
+                                        <div class="row p-2" role="menu">
+                                            @foreach (var subCategory in category.GroupBy(x => x.CarType))
+                                            {
+                                                <div class="col-sm-6">
+                                                    <h4 class="menu-subcategory-header">@subCategory.Key</h4>
+                                                    <hr>
+                                                    <ul class="multi-column-dropdown">
+                                                        @foreach (var product in subCategory)
+                                                        {
+                                                            <li><a class="sub-category-link" href="@product.PageUrl">@product.Model</a></li>
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            }
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        counter++;
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
