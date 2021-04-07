@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace Web.UI
@@ -18,6 +14,7 @@ namespace Web.UI
                 url: "DemoNav/BootstrapNav",
                 defaults: new { controller = "BootstrapNavigation", action = "BootstrapNav", id = UrlParameter.Optional }
             );
+ 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

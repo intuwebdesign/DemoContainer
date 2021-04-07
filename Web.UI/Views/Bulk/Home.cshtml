@@ -1,0 +1,17 @@
+﻿<div class="container">
+    <div class="row">
+        <div clas="col-12">
+            <h2>BulkInsert @ViewBag.Message</h2>
+            @using (Html.BeginForm("Home", "Bulk", FormMethod.Post, new {enctype = "multipart/form-data"}))
+            {
+                <div>  
+                    @Html.TextBox("file", "", new {  type= "file"}) <br />  
+   
+                    <input type="submit" value="Upload" /> 
+                </div>  
+            }
+        </div>
+    </div>
+</div>
+
+

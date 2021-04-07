@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DynamicNavigationModel\BootstrapNavigtaionDataModel.cs" />
     <Compile Include="DynamicNavigationModel\BootstrapNavigtaionViewModel.cs" />
+    <Compile Include="FormValidationModel\FormValidationViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

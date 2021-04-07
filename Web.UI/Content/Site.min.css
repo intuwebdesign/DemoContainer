@@ -8,4 +8,4 @@
 /*!
  * Custom styles
  */
-html,body{background-color:#fff;height:100%;margin:0;padding:0;}body{display:flex;flex-direction:column;}.main{flex:1 0 auto;}ul.dropdown-menu.multi-column{width:320px;}h4.menu-subcategory-header{font-size:14px;}a.sub-category-link{font-size:14px;color:#000;text-decoration:none;}
+html,body{background-color:#fff;height:100%;margin:0;padding:0;}body{display:flex;flex-direction:column;}.main{flex:1 0 auto;}ul.dropdown-menu.multi-column{width:320px;}h4.menu-subcategory-header{font-size:14px;}a.sub-category-link{font-size:14px;color:#000;text-decoration:none;}.error{color:#f00;}

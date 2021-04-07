@@ -7226,3 +7226,6 @@ a.sub-category-link {
   font-size: 14px;
   color: #000000;
   text-decoration: none; }
+
+.error {
+  color: red; }

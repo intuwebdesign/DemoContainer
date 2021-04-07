@@ -23,10 +23,16 @@ namespace Web.UI
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/custom").Include(
-                "~/Scripts/custom/positionNavDemo.js"));
+                "~/Scripts/custom/positionNavDemo.js", 
+                "~/Scripts/custom/jqueryValidation.js"));
+
+            bundles.Add(new StyleBundle("~/fonts/css").Include(
+                "~/fonts/font-awesome.min.css", 
+                "~/fonts/fontawesome-all.min.css", 
+                "~/fonts/fontawesome5-overrides.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/site.css"));
+                            "~/Content/site.css"));
         }
     }
 }
