@@ -391,6 +391,7 @@
     <Content Include="Views\Shared\_DynamicNavMenu.cshtml" />
     <Content Include="Views\Partials\pvDynamicMenu.cshtml" />
     <Content Include="Views\Bulk\Home.cshtml" />
+    <Content Include="Views\RandomInt\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

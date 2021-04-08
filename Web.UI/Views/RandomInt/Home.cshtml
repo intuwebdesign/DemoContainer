@@ -1,0 +1,46 @@
+﻿<div class="container">
+    <div class="row">
+        <div clas="col-12">
+            
+
+            @using (Html.BeginForm("GetLotteryNumbers", "RandomInt", FormMethod.Post))
+            {
+            <div>
+                <p>
+                    Line One:
+                    <ol class="list-inline">
+                        @foreach (var number in ViewBag.LineOne)
+                        {
+                            <li class="list-inline-item"><span class="badge badge-danger">@number</span></li>
+                        }
+                    </ol>
+
+                <p>Line Two:</p>
+                <ol class="list-inline">
+                    @foreach (var number in ViewBag.LineTwo)
+                    {
+                    <li class="list-inline-item"><span class="badge badge-danger">@number</span></li>
+                    }
+                </ol>
+                <p>Line Three:</p>
+                <ol class="list-inline">
+                    @foreach (var number in ViewBag.LineThree)
+                    {
+                    <li class="list-inline-item"><span class="badge badge-danger">@number</span></li>
+                    }
+                </ol>
+                <p>Line Four:</p>
+                <ol class="list-inline">
+                    @foreach (var number in ViewBag.LineFour)
+                    {
+                    <li class="list-inline-item"><span class="badge badge-danger">@number</span></li>
+                    }
+                </ol>
+                <input type="submit" value="Generate Numbers" />
+            </div>
+            }
+        </div>
+    </div>
+</div>
+
+
