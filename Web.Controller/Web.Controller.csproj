@@ -84,9 +84,11 @@
     <Compile Include="Controllers\BootstrapNavigationController.cs" />
     <Compile Include="Controllers\BulkController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PagerController.cs" />
     <Compile Include="Controllers\RandomIntController.cs" />
     <Compile Include="Helpers\DbConnectionAbstractClass.cs" />
     <Compile Include="Helpers\ExtractAndBulkInsert.cs" />
+    <Compile Include="Helpers\PagerHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

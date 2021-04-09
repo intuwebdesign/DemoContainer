@@ -392,6 +392,9 @@
     <Content Include="Views\Partials\pvDynamicMenu.cshtml" />
     <Content Include="Views\Bulk\Home.cshtml" />
     <Content Include="Views\RandomInt\Home.cshtml" />
+    <Content Include="Views\Partials\pvPager.cshtml" />
+    <Content Include="Views\Pager\SearchResults.cshtml" />
+    <Content Include="Views\Pager\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

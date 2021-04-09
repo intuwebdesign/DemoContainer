@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div clas="col-12">
+            <h2>Pagination Example</h2>
+            <p>Enter either beer, cider or soft drink</p>
+            @using (Html.BeginForm("SearchResults", "Pager", FormMethod.Get, new { enctype = "multipart/form-data" }))
+            {
+                <div>
+                    @Html.TextBox("q", "") <br />
+
+                    <input type="submit" value="Search" />
+                </div>
+            }
+        </div>
+       
+    </div>
+</div>
+
+

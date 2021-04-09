@@ -1,0 +1,49 @@
+﻿@model  Web.Controller.Helpers.DisplayPagerViewModel
+@{
+    string query = Request.QueryString["q"];
+    string appendS = Model.DisplaySearchResults.Count() != 1 ? "s" : null;
+}
+
+}
+<div class="container">
+    <div class="row">
+        <div clas="col-12">
+            <h2>Pagination Example</h2>
+            <p>Enter either beer, cider or soft drink</p>
+            @using (Html.BeginForm("SearchResults", "Pager", FormMethod.Get, new { enctype = "multipart/form-data" }))
+            {
+                <div>
+                    @Html.TextBox("q", "") <br />
+
+                    <input type="submit" value="Search" />
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+<div class="container">
+    @{
+        if (Model.DisplaySearchResults.Any())
+        {
+            <p class="text-info mt-3">@Html.Raw($"Your search for <strong>{query}</strong> returned <strong>{Model.NumberOfResults} result{appendS}</strong>")</p>
+            
+            <ul class="list-unstyled">
+                @foreach (var result in Model.DisplaySearchResults)
+                {
+                    <li>
+                        @result.Beverage - @result.Type
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p class="text-danger">@Html.Raw($"Sorry no results found for <strong>{query}</strong>")</p>
+        }
+
+    }
+
+</div>
+
+@Html.Partial("~/Views/Partials/pvPager.cshtml")
