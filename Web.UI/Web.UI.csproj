@@ -395,6 +395,9 @@
     <Content Include="Views\Partials\pvPager.cshtml" />
     <Content Include="Views\Pager\SearchResults.cshtml" />
     <Content Include="Views\Pager\Home.cshtml" />
+    <Content Include="Views\SendEmail\Home.cshtml" />
+    <Content Include="Views\SendEmail\SendEmail.cshtml" />
+    <Content Include="Views\SendEmail\pvContactPartialViewTemplate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

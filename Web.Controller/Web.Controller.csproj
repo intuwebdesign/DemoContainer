@@ -41,6 +41,7 @@
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -86,9 +87,12 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PagerController.cs" />
     <Compile Include="Controllers\RandomIntController.cs" />
+    <Compile Include="Controllers\SendEmailController.cs" />
     <Compile Include="Helpers\DbConnectionAbstractClass.cs" />
     <Compile Include="Helpers\ExtractAndBulkInsert.cs" />
     <Compile Include="Helpers\PagerHelper.cs" />
+    <Compile Include="Helpers\RenderMVCPartialsContact.cs" />
+    <Compile Include="Helpers\SendEmailHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
