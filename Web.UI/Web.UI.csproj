@@ -398,6 +398,7 @@
     <Content Include="Views\SendEmail\Home.cshtml" />
     <Content Include="Views\SendEmail\SendEmail.cshtml" />
     <Content Include="Views\SendEmail\pvContactPartialViewTemplate.cshtml" />
+    <Content Include="Views\ForLoop\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

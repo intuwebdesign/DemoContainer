@@ -1,0 +1,66 @@
+﻿@using System.Collections
+
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+
+            <p>Number Of Drinks: @TempData["allDrinks"]</p>
+            <p>return 0 to 9 or first 10</p>
+            <ul>
+                @foreach (var drink in (IEnumerable)TempData["firstTenDrinks"])
+                {
+                    <li>@drink</li>
+                }
+            </ul>
+        </div>
+        <div class="col-3">
+            <p>@TempData["YearsText"]</p>
+            <p>Years Asc</p>
+            <select class="form-control" name="yearsAsc" id="yearsASc">
+                @foreach (var year in (IEnumerable)TempData["LoopYears"])
+                {
+                    <option value="@year">@year</option>
+                }
+            </select>
+            <p>Years Desc</p>
+            <select class="form-control" name="yearsDesc" id="yearsDesc">
+                @foreach (var year in (IEnumerable)TempData["LoopYearsDesc"])
+                {
+                    <option value="@year">@year</option>
+                }
+            </select>
+        </div>
+        <div class="col-3">
+            <p>Return Random Numbers</p>
+            <p>Keep refeshing page and you will notice you have duplicate numbers</p>
+            <ul>
+                @foreach (var rnd in (IEnumerable)TempData["RandNumbers"])
+                {
+                    <li>@rnd</li>
+                }
+            </ul>
+        </div>
+        <div class="col-3">
+            <p>Return Random Numbers No Dups</p>
+            <p>I use a while loop to achieve this</p>
+            <ul>
+                @foreach (var rnd in (IEnumerable)TempData["RandomNoDups"])
+                {
+                    <li>@rnd</li>
+                }
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <p>Return Numbers Desc</p>
+            <ul>
+                @foreach (var lst in (IEnumerable)TempData["LoopNumbersDesc"])
+                {
+                    <li>@lst</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
