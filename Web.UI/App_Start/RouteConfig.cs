@@ -20,9 +20,15 @@ namespace Web.UI
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
-           
-           
-            
+
+            routes.MapRoute(
+                name: "Caching",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "MvcCaching", action = "MvcCachingExample", id = UrlParameter.Optional }
+            );
+
+
+
         }
     }
 }

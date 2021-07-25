@@ -399,6 +399,10 @@
     <Content Include="Views\SendEmail\SendEmail.cshtml" />
     <Content Include="Views\SendEmail\pvContactPartialViewTemplate.cshtml" />
     <Content Include="Views\ForLoop\Home.cshtml" />
+    <Content Include="Views\Caching\CachingView.cshtml" />
+    <Content Include="Views\Caching\CachingProfileView.cshtml" />
+    <Content Include="Views\Partials\pvWillFailForCacheProfile.cshtml" />
+    <Content Include="Views\Caching\CachingWithRenderActionPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

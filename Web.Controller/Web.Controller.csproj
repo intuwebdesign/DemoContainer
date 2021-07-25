@@ -86,6 +86,8 @@
     <Compile Include="Controllers\BulkController.cs" />
     <Compile Include="Controllers\ForLoopController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MasterController.cs" />
+    <Compile Include="Controllers\MvcCachingController.cs" />
     <Compile Include="Controllers\PagerController.cs" />
     <Compile Include="Controllers\RandomIntController.cs" />
     <Compile Include="Controllers\SendEmailController.cs" />
