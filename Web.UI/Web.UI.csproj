@@ -131,6 +131,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\cssFlex.css" />
     <Content Include="Content\Site.min.css">
       <DependentUpon>Site.css</DependentUpon>
     </Content>
@@ -404,6 +405,8 @@
     <Content Include="Views\Caching\CachingProfileView.cshtml" />
     <Content Include="Views\Partials\pvWillFailForCacheProfile.cshtml" />
     <Content Include="Views\Caching\CachingWithRenderActionPartial.cshtml" />
+    <Content Include="Views\CssFlex\Home.cshtml" />
+    <Content Include="Views\Shared\_NoBootstrap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
