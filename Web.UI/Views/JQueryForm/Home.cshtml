@@ -1,0 +1,31 @@
+﻿@model Web.Model.JQueryAjaxUploadModel.UploadFormModel
+<div class="container">
+    <div class="row">
+        <div clas="col-12">
+            <h2>jQuery Ajax Form With Image</h2>
+            @using (Html.BeginForm("Upload", "JQueryForm", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmAjaxForm", name = "frmAjaxForm" }))
+            {
+                <div>
+                    @Html.LabelFor(x => x.Firstname)
+                    @Html.TextBoxFor(x => x.Firstname)
+                    @Html.ValidationMessageFor(x => x.Firstname)
+                </div>
+                <div>
+                    @Html.LabelFor(x => x.UploadImage)
+                    @Html.TextBoxFor(x => x.UploadImage, new { type = "file" })
+                    @Html.ValidationMessageFor(x => x.UploadImage)
+                </div>
+                <div>
+                    <button type="submit" value="Submit">Submit</button>
+                </div>
+                <div id="ajaxRegister"></div>
+            }
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+
+    <script src="~/Scripts/custom/jqueryUploadImage.js"></script>
+}
