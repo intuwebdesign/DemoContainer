@@ -49,6 +49,7 @@
     <Compile Include="FormValidationModel\FormValidationViewModel.cs" />
     <Compile Include="JQueryAjaxUploadModel\UploadFormModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TupleModel\DisplayListOfPetsTuple.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

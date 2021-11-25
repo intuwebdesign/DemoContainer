@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            @if (ViewBag.Name != null)
+            {
+                <p>Name = @ViewBag.Name</p>
+            }
+            @if (ViewBag.HasPet != null)
+            {
+                <p>Has Pet = @ViewBag.HasPet</p>
+            }
+            @if (ViewBag.ListOfPets != null)
+            {
+                <p>List Of Pets</p>
+                <ul>
+                    @foreach (var pet in (List<string>)ViewBag.ListOfPets)
+                    {
+                        <li>@pet</li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+</div>
+
+
+

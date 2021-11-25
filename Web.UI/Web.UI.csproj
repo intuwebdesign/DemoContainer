@@ -409,6 +409,7 @@
     <Content Include="Views\CssFlex\Home.cshtml" />
     <Content Include="Views\Shared\_NoBootstrap.cshtml" />
     <Content Include="Views\JQueryForm\Home.cshtml" />
+    <Content Include="Views\TupleExample\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
