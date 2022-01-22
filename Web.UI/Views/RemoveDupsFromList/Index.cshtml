@@ -1,0 +1,30 @@
+﻿@using Web.Model.RemoveDupsFromList
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div clas="col-12">
+            <h4>Remove Dups from list Via Model</h4>
+            <ol>
+                @foreach (var person in Model.DisplayData)
+                {
+                    <li><strong>Name:</strong> @person.Name <strong>Age:</strong> @person.Age</li>
+                }
+            </ol>
+            <hr/>
+            
+            <h4>Remove Dups from list Via Viewbag</h4>
+            @if (ViewBag.Message != null)
+            {
+                <ol>
+                    @foreach (var person in (IEnumerable<ListOfTestData>)ViewBag.Message)
+                    {
+                        <li><strong>Name:</strong> @person.Name <strong>Age:</strong> @person.Age</li>
+                    }
+                </ol>
+            }
+        </div>
+    </div>
+</div>
