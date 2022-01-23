@@ -17,5 +17,24 @@ namespace Web.Controller.Controllers
 
             return View(displayModel);
         }
+
+
+        [HttpPost, ValidateInput(true)]
+        [ValidateAntiForgeryToken]
+        public ActionResult InsertText(DisplayDropDownMenuViewModel model)
+        {
+            bool addLineToFile = WriteToTextFile.WriteToFile(model);
+            if (Request.UrlReferrer == null) return null;
+
+            string redirectBackToPage = Request.UrlReferrer.PathAndQuery;
+
+            if (addLineToFile)
+            {
+                TempData["Status"] = $"Added {model.InputText} to text file";
+                return Redirect(redirectBackToPage);
+            }
+            TempData["Status"] = $"Failed to add {model.InputText} to text file";
+            return Redirect(redirectBackToPage);
+        }
     }
 }

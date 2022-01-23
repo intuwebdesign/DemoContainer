@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -8,8 +9,9 @@ namespace Web.Model.ReadDataFromTextFile
 {
     public class DisplayDropDownMenuViewModel
     {
-        public string County        { get; set; }
+        public string County                                { get; set; }
         public IEnumerable<SelectListItem> ListOfCountys    { get; set; }
+        public string InputText                             { get; set; }
     }
     public class DropDownListOfCountysDataModel
     {
@@ -27,6 +29,28 @@ namespace Web.Model.ReadDataFromTextFile
             var retrieveCounties = counties.Select(r => new SelectListItem { Text = r.Trim(), Value = r.Trim() }).ToList();
 
             return retrieveCounties;
+        }
+    }
+
+    public static class WriteToTextFile
+    {
+        public static bool WriteToFile(DisplayDropDownMenuViewModel model)
+        {
+            try
+            {
+                const string directory = @"ListOfCounties";
+                const string fileName = "UnitedKingdom.txt";
+                using (StreamWriter sw = File.AppendText(HttpContext.Current.Server.MapPath($"~/{directory}/{fileName}")))
+                {
+                    sw.Write($",{Environment.NewLine}{model.InputText}");
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                //Do your error logging here
+                return false;
+            }
         }
     }
 }

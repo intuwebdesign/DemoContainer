@@ -6,7 +6,28 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            @Html.DropDownListFor(x=>x.County, new SelectList(Model.ListOfCountys, "Value", "Text"), new { @class = "form-control" })
+            @using (Html.BeginForm("InsertText", "ReadDataFromTextFile", FormMethod.Post, new { id = "frmWriteToFile", name = "frmWriteToFile" }))
+            {
+                if (TempData["Status"] != null)
+                {
+                    <div class="alert alert-warning">
+                        @TempData["Status"]
+                    </div>
+                }
+                @Html.AntiForgeryToken()
+                <div class="input-group mb-3">
+                    @Html.TextBoxFor(x => x.InputText, new { @class = "form-control" })
+                </div>
+                <div class="input-group mb-3">
+                    <button type="submit" id="btnWRiteToFile" class="btn btn-success">Submit</button>
+                </div>
+            }
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            @Html.DropDownListFor(x => x.County, new SelectList(Model.ListOfCountys, "Value", "Text"), new { @class = "form-control" })
         </div>
     </div>
 </div>
