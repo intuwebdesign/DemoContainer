@@ -93,6 +93,7 @@
     <Compile Include="Controllers\MvcCachingController.cs" />
     <Compile Include="Controllers\PagerController.cs" />
     <Compile Include="Controllers\RandomIntController.cs" />
+    <Compile Include="Controllers\ReadDataFromTextFileController.cs" />
     <Compile Include="Controllers\RemoveDupsFromListController.cs" />
     <Compile Include="Controllers\SendEmailController.cs" />
     <Compile Include="Controllers\TupleExampleController.cs" />

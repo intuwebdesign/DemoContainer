@@ -1,0 +1,12 @@
+﻿@model Web.Model.ReadDataFromTextFile.DisplayDropDownMenuViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            @Html.DropDownListFor(x=>x.County, new SelectList(Model.ListOfCountys, "Value", "Text"), new { @class = "form-control" })
+        </div>
+    </div>
+</div>
