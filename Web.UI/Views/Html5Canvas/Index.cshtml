@@ -1,0 +1,61 @@
+﻿@model Web.Model.Html5CanvasModel.Html5CanvasViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section CanvasCropCss {
+    <link href="~/Content/Html5Canvas.css" rel="stylesheet" />
+}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <div class="input-group">
+                    @Html.TextBoxFor(x => x.Image, new { type = "file", accept = "jpeg,jpg,png", @class = "btn btn-success uploadFile" })
+                </div>
+            </div>
+            <div class="form-group">
+
+                @using (Html.BeginForm("Base64Form", "Html5Canvas", FormMethod.Post, new { id = "frmWriteToFile", name = "frmWriteToFile", enctype = "multipart/form-data" }))
+                {
+                    @Html.HiddenFor(x => x.Base64Image)
+
+                    <button type="submit" class="btn btn-success">Submit</button>
+
+                    if (TempData["Image"] != null)
+                    {
+                        <hr />
+                        <img src="@TempData["Image"]" />
+                    }
+
+                }
+                <hr />
+                <button class="btn btn-success btnCrop">Crop</button>
+                <button class="btn btn-danger btnReset">Reset</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="canvasCropWrapper">
+                <div class="divTopOverlay">
+                </div>
+                <div class="divBottomOverlay">
+                </div>
+                <div class="divLeftOverlay">
+                </div>
+                <div class="divRightOverlay">
+                </div>
+                <div class="cropImageOverlay">
+                    <div class="cropImageOverlayInner">
+                    </div>
+                </div>
+                <img class="resize-image" src="img/image.jpg" alt="image for resizing">
+            </div>
+        </div>
+    </div>
+</div>
+
+@section CanvasCrop {
+    <script src="~/Scripts/custom/CanvasResizeImage.js"></script>
+}

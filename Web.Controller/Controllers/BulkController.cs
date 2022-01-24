@@ -20,7 +20,6 @@ namespace Web.Controller.Controllers
         [HttpPost]
         public ActionResult Home(HttpPostedFileBase file)
         {
-
             try
             {
                 string mimeType = MimeMapping.GetMimeMapping(file.FileName);

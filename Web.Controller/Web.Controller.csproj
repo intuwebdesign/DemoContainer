@@ -88,6 +88,7 @@
     <Compile Include="Controllers\CssFlexController.cs" />
     <Compile Include="Controllers\ForLoopController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Html5CanvasController.cs" />
     <Compile Include="Controllers\JQueryFormController.cs" />
     <Compile Include="Controllers\MasterController.cs" />
     <Compile Include="Controllers\MvcCachingController.cs" />
