@@ -23,8 +23,7 @@ namespace Web.UI
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/custom").Include(
-                "~/Scripts/custom/positionNavDemo.js", 
-                "~/Scripts/custom/jqueryValidation.js"));
+                "~/Scripts/custom/positionNavDemo.js"));
 
             bundles.Add(new StyleBundle("~/fonts/css").Include(
                 "~/fonts/font-awesome.min.css", 

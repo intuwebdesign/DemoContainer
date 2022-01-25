@@ -6,32 +6,60 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <form method="post" action="/" id="demoValidation" name="demoValidation">
-                <div class="form-group">
-                    @Html.LabelFor(x=>x.FirstName)
-                    @Html.TextBoxFor(x => x.FirstName, new {@class = "form-control", placeholder = "First Name"})
+            @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { id = "demoValidation", name = "demoValidation" }))
+            {
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user-shield"></i></div>
+                    </div>
+                    @Html.LabelFor(x => x.FirstName, new { @class = "sr-only" })
+                    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control", placeholder = "First Name" })
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(x=>x.LastName)
-                    @Html.TextBoxFor(x => x.LastName, new {@class = "form-control", placeholder = "Last Name"})
+
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user-shield"></i></div>
+                    </div>
+                    @Html.LabelFor(x => x.LastName, new { @class = "sr-only" })
+                    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control", placeholder = "Last Name" })
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(x=>x.Email)
-                    @Html.TextBoxFor(x => x.Email, new {@class = "form-control", placeholder = "Email"})
+
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="far fa-envelope"></i></div>
+                    </div>
+                    @Html.LabelFor(x => x.Email,new { @class = "sr-only" })
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "Email" })
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(x=>x.Password)
-                    @Html.PasswordFor(x => x.Password, new {@class = "form-control", placeholder = "Password"})
+
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-eye-slash" id="eyePassword"></i></div>
+                    </div>
+                    @Html.LabelFor(x => x.Password, new { @class = "sr-only" })
+                    @Html.PasswordFor(x => x.Password, new { @class = "form-control", placeholder = "Password" })
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(x=>x.ComparePassword)
-                    @Html.PasswordFor(x => x.ComparePassword, new {@class = "form-control", placeholder = "Re-enter password"})
+
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-eye-slash" id="eyePasswordCompare"></i></div>
+                    </div>
+                    @Html.LabelFor(x => x.ComparePassword, new { @class = "sr-only" })
+                    @Html.PasswordFor(x => x.ComparePassword, new { @class = "form-control", placeholder = "Re-enter password" })
                 </div>
+
                 <div class="form-group">
                     <div class="errorTxt"></div>
+                    <div id="ajaxMessage"></div>
                     <button class="btn btn-success" type="submit"> Send <i class="fa fa-chevron-circle-right"></i></button>
                 </div>
-            </form>
+            }
+
         </div>
     </div>
 </div>
+@section jqueryvalidation
+{
+
+    <script src="~/Scripts/custom/jqueryValidation.js?v=2"></script>
+}
