@@ -1,0 +1,135 @@
+﻿@model Web.Model.ShoppingCartModel.CustomerShippingDetailsViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            @using (Html.BeginForm("Checkout", "ShoppingCart", FormMethod.Post, new { id = "demoShoppingCart", name = "demoShoppingCart" }))
+            {
+                <div class="alert alert-info">
+                    <h4>Your Details</h4>
+                    @if (TempData["ServerMessage"] != null)
+                    {
+                        @TempData["ServerMessage"]
+                    }
+                </div>
+                @Html.ValidationSummary()
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user-shield"></i></div>
+                    </div>
+                    @Html.LabelFor(x => x.CustomerFirstName, new { @class = "sr-only" })
+                    @Html.TextBoxFor(x => x.CustomerFirstName, new { @class = "form-control", placeholder = "First Name" })
+                </div>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user-shield"></i></div>
+                    </div>
+                    @Html.LabelFor(x => x.CustomerLastName, new { @class = "sr-only" })
+                    @Html.TextBoxFor(x => x.CustomerLastName, new { @class = "form-control", placeholder = "Last Name" })
+                </div>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="far fa-address-book"></i></div>
+                    </div>
+                    @Html.LabelFor(x => x.CustomerAddress, new { @class = "sr-only" })
+                    @Html.TextBoxFor(x => x.CustomerAddress, new { @class = "form-control", placeholder = "Address" })
+                </div>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-city"></i></div>
+                    </div>
+                    @Html.LabelFor(x => x.CustomerCity, new { @class = "sr-only" })
+                    @Html.TextBoxFor(x => x.CustomerCity, new { @class = "form-control", placeholder = "City" })
+                </div>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-map-marker-alt"></i></div>
+                    </div>
+                    @Html.LabelFor(x => x.CustomerCounty, new { @class = "sr-only" })
+                    @Html.TextBoxFor(x => x.CustomerCounty, new { @class = "form-control", placeholder = "County/State" })
+                </div>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-map-marker-alt"></i></div>
+                    </div>
+                    @Html.LabelFor(x => x.CustomerPostCode, new { @class = "sr-only" })
+                    @Html.TextBoxFor(x => x.CustomerPostCode, new { @class = "form-control", placeholder = "Post-Code/Zip Code" })
+                </div>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-globe-europe"></i></div>
+                    </div>
+                    @Html.LabelFor(x => x.CustomerCountry, new { @class = "sr-only" })
+                    @Html.TextBoxFor(x => x.CustomerCountry, new { @class = "form-control", placeholder = "Country" })
+                </div>
+
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-phone"></i></div>
+                    </div>
+                    @Html.LabelFor(x => x.CustomerPhoneNumber, new { @class = "sr-only" })
+                    @Html.TextBoxFor(x => x.CustomerPhoneNumber, new { @class = "form-control", placeholder = "Phone Number" })
+                </div>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="far fa-envelope"></i></div>
+                    </div>
+                    @Html.LabelFor(x => x.CustomerEmail, new { @class = "sr-only" })
+                    @Html.TextBoxFor(x => x.CustomerEmail, new { @class = "form-control", placeholder = "Email" })
+                </div>
+                <div class="alert alert-info">
+                    <h4>Card Details</h4>
+                </div>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user-shield"></i></div>
+                    </div>
+                    @Html.LabelFor(x => x.CustomerNameOnCard, new { @class = "sr-only" })
+                    @Html.TextBoxFor(x => x.CustomerNameOnCard, new { @class = "form-control", placeholder = "Name on card" })
+                </div>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="far fa-credit-card"></i></div>
+                    </div>
+                    @Html.LabelFor(x => x.CustomerCardNumber, new { @class = "sr-only" })
+                    @Html.TextBoxFor(x => x.CustomerCardNumber, new { @class = "form-control", placeholder = "Card number" })
+                </div>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-calendar-alt"></i></div>
+                    </div>
+                    @Html.LabelFor(x => x.CustomerCardExpiryDate, new { @class = "sr-only" })
+                    @Html.TextBoxFor(x => x.CustomerCardExpiryDate, new { @class = "form-control", placeholder = "Expiry Date" })
+                </div>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-credit-card"></i></div>
+                    </div>
+                    @Html.LabelFor(x => x.CustomerCardCvvNumber, new { @class = "sr-only" })
+                    @Html.TextBoxFor(x => x.CustomerCardCvvNumber, new { @class = "form-control", placeholder = "CVV Number" })
+                </div>
+                <div class="form-group">
+                    <div id="ajaxMessage"></div>
+                    @Html.HiddenFor(x=>x.ProductIds)
+                    <button class="btn btn-success" type="submit"> Make Payment <i class="fa fa-chevron-circle-right"></i></button>
+                </div>
+            }
+        </div>
+        <div class="col-6">
+            <div class="alert alert-info">
+                <h4><span id="modalCount"> total cost </span> <span id="modalCart"></span></h4>
+            </div>
+            <div id="modal-body" class="modal-body">
+                <ul id="modelulcart" class="list-inline">
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section ShoppingCart {
+    <script src="~/Scripts/custom/shoppingCart.js?v5"></script>
+}

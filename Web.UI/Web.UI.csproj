@@ -50,8 +50,8 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -146,6 +146,10 @@
     <Content Include="fonts\fontawesome5-overrides.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\ShoppingCartImages\PhoneFour.jpg" />
+    <Content Include="Images\ShoppingCartImages\PhoneOne.jpg" />
+    <Content Include="Images\ShoppingCartImages\PhoneThree.jpg" />
+    <Content Include="Images\ShoppingCartImages\PhoneTwo.jpg" />
     <Content Include="ListOfCounties\UnitedKingdom.txt" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -165,6 +169,7 @@
     <Content Include="Scripts\custom\jqueryUploadImage.js" />
     <Content Include="Scripts\custom\jqueryValidation.js" />
     <Content Include="Scripts\custom\positionNavDemo.js" />
+    <Content Include="Scripts\custom\shoppingCart.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -416,6 +421,8 @@
     <Content Include="Views\RemoveDupsFromList\Index.cshtml" />
     <Content Include="Views\ReadDataFromTextFile\Index.cshtml" />
     <Content Include="Views\Html5Canvas\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\Checkout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

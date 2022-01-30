@@ -1,0 +1,68 @@
+﻿@using System.Globalization
+@model Web.Model.ShoppingCartModel.DisplayProductsViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center pb-5">
+            <button type="button" class="btn btn-success" id="btnModalCart" data-toggle="modal" data-target="#myModal">
+                View Cart
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        @foreach (var item in Model.DisplayProducts)
+        {
+            <div class="col-3 text-center productInfo">
+                <img src="@item.ProductImage" class="img-thumbnail productImage" />
+                <p class="productHeading">@item.ProductTitle</p>
+                @*This is another way to show the price of the product in the customers currency*@
+                <p>@item.ProductDescription</p>
+                @switch (item.CurrencyFormat)
+                {
+                    case "United Kingdom":
+                        var provider = CultureInfo.CreateSpecificCulture("en-GB");
+                        <p class="productPrice" data-price="@item.ProductCulturePrice">@item.ProductCulturePrice.ToString("C", provider)</p>
+                        <button class="btn btn-success btn-block productId" data-id="id-@item.ProductId" data-price="@item.ProductCulturePrice">Add to Cart: @item.ProductCulturePrice.ToString("C", provider)</button>
+                        break;
+                    case "United States":
+                        var usaProvider = CultureInfo.CreateSpecificCulture("en-US");
+                        <p class="productPrice" data-price="@item.ProductCulturePrice">@item.ProductCulturePrice.ToString("C", usaProvider)</p>
+                        <button class="btn btn-success btn-block productId" data-id="id-@item.ProductId" data-price="@item.ProductCulturePrice">Add to Cart: @item.ProductCulturePrice.ToString("C", usaProvider)</button>
+                        break;
+                    case "France":
+                        var frProvider = CultureInfo.CreateSpecificCulture("fr-FR");
+                        <p class="productPrice" data-price="@item.ProductCulturePrice">@item.ProductCulturePrice.ToString("C", frProvider)</p>
+                        <button class="btn btn-success btn-block productId" data-id="id-@item.ProductId" data-price="@item.ProductCulturePrice">Add to Cart: @item.ProductCulturePrice.ToString("C", frProvider)</button>
+                        break;
+                }
+            </div>
+        }
+    </div>
+    <input type="hidden" id="currencyFormat" , name="currencyFormat" value="@Model.DisplayProducts.First().CurrencyFormat" />
+</div>
+
+<div class="modal fade" tabindex="-1" id="myModal" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4><span id="modalCount"> total cost </span> <span id="modalCart"></span></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div id="modal-body" class="modal-body">
+                <ul id="modelulcart" class="list-inline">
+                </ul>
+            </div>
+            <div class="modal-footer">
+                @Html.ActionLink("Proceed to checkout", "Checkout", "ShoppingCart", null, new { @class = "btn btn-success", id = "modelProeedToCheckout", name = "modelProeedToCheckout" })
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section ShoppingCart {
+    <script src="~/Scripts/custom/shoppingCart.js?v4"></script>
+}
