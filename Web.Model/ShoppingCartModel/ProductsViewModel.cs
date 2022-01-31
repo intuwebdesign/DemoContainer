@@ -48,7 +48,7 @@ namespace Web.Model.ShoppingCartModel
         public IEnumerable<ProductsViewModel> HardCodeListOfProducts()
         {
             var client          = new HttpClient();
-            var api             = new IpInfoApi("Your API Key", client);//You will need to add your own API key here, would really be stored in the CMS or web.config
+            var api             = new IpInfoApi("YOUR API Key", client);//You will need to add your own API key here, would really be stored in the CMS or web.config
             var response        = api.GetCurrentInformationAsync().Result;
             string country      = response.Country;
 
@@ -64,7 +64,7 @@ namespace Web.Model.ShoppingCartModel
             };
 
             //Now add the culture price
-            string currencyApiKey = "Your API Key";//You will need to add your own API key here, would really be stored in the CMS or web.config
+            string currencyApiKey = "YOUR API Key";//You will need to add your own API key here, would really be stored in the CMS or web.config
 
             var currencyClient = new HttpClient();
 

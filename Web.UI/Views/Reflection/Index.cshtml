@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h4>List Reflection</h4>
+            @if (TempData["ReflectionList"] != null)
+            {
+                var people = TempData["ReflectionList"] as List<string>;
+            <ol>
+                @if (people != null)
+                {
+                    foreach (var item in people)
+                    {
+                        <li>@item</li>
+                    }
+                }
+            </ol>
+            }
+        </div>
+        <div class="col-6">
+            <h4>Single Reflection</h4>
+            @if (TempData["SingleItem"] != null)
+            {
+                <p>@TempData["SingleItem"]</p>
+            }
+        </div>
+    </div>
+</div>

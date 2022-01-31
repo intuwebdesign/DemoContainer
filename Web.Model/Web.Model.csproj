@@ -79,6 +79,7 @@
     <Compile Include="JQueryAjaxUploadModel\UploadFormModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReadDataFromTextFile\ReadDataFromTextFile.cs" />
+    <Compile Include="ReflectionModel\ReflectionViewModel.cs" />
     <Compile Include="RemoveDupsFromList\ListOfTestData.cs" />
     <Compile Include="ShoppingCartModel\ProductsViewModel.cs" />
     <Compile Include="TupleModel\DisplayListOfPetsTuple.cs" />

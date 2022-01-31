@@ -423,6 +423,7 @@
     <Content Include="Views\Html5Canvas\Index.cshtml" />
     <Content Include="Views\ShoppingCart\Index.cshtml" />
     <Content Include="Views\ShoppingCart\Checkout.cshtml" />
+    <Content Include="Views\Reflection\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
