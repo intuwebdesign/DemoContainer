@@ -75,6 +75,8 @@
     <Compile Include="DynamicNavigationModel\BootstrapNavigtaionViewModel.cs" />
     <Compile Include="EmailAttachmentModel\EmailBodyViewModel.cs" />
     <Compile Include="FormValidationModel\FormValidationViewModel.cs" />
+    <Compile Include="FuncModel\EmployeeDetailsDataModel.cs" />
+    <Compile Include="FuncModel\EmployeeDetailsViewModel.cs" />
     <Compile Include="Html5CanvasModel\Html5CanvasViewModel.cs" />
     <Compile Include="JQueryAjaxUploadModel\UploadFormModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
